@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="localiser les vélos à louer sur une carte de Lyon, 
+        visualisez les disponibilités et réservez le votre.">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="map.css">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+        <title>LOCaBIKE map</title>
+    </head>
+
+    <body>
+        <section id="map-container" class="map-container">
+            <div id="map" class="map">
+                <button id="btnMap" class="btn btnMap">btnMap</button>
+            </div>
+
+            <div id="stations" class="stations">
+                <button id="btnStations" class="btn btnStations">btnStations</button>
+                <div id="infostations" class="infostations">
+                    <h3>Détails de la station</h3>
+                    <form>
+                        <button id="btnForm" class="btn btnForm">btnForm</button>
+                    </form>
+                </div>
+
+                <div id="signature" class="signature">
+                    <button id="btnSign" class="btn btnSign">btnSign</button>
+                </div>
+            </div>
+        </section>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js" ></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+        <script src="map.js"></script>
+        <script src="main.js"></script>
+                
+    </body>
+</html>
