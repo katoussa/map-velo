@@ -4,7 +4,7 @@ var globalMain = {
             button: "#btnMap",
             lat: 45.750000,
             lng: 4.850000,
-            url: "https://api.jcdecaux.com/vls/v1/stations?contract={contract_name}&apiKey={aafd8fb136e33eb56306745265f47b4f6770d3cb}",
+            url: "https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=aafd8fb136e33eb56306745265f47b4f6770d3cb",
             req: new XMLHttpRequest()
         },
 

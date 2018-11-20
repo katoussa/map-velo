@@ -18,7 +18,6 @@ var map = {
 
         //appel des méthodes
         map.makeMap();
-        this.addMarkers();
     },
 
     //Méthode de création de la map
@@ -28,6 +27,7 @@ var map = {
                     minZoom: 1,
                     maxZoom: 20
                 }).addTo(map.mapIs);
+        map.addMarkers();
     },
 
     
@@ -35,9 +35,16 @@ var map = {
     //Méthode de récupération des données de l'API
     addMarkers: function(){
         map.req.open("GET", map.url);
-        map.req.addEventListener("load", function () {
-            
+        map.req.addEventListener("load", function () {  //vérification chargement
+            if (map.req.status >= 200 && map.req.status < 400) {
+                console.log(map.req.responseText);  //vérification
+            } else {
+                console.error(map.req.status + " " + map.req.statusText + " " + map.url);
+            }
         });
-        console.log(map.addMarkers);
+        map.req.addEventListener("error", function () { //si erreur
+            console.error("Erreur réseau avec l'URL " + map.url);
+        });
+        map.req.send(null);
     }
 };
