@@ -33,6 +33,10 @@
     height: 350px;
 }
 
+.btnInfos{
+    border-radius: 5px;
+}
+
 /* .infostations form{
     display: none;
 } */

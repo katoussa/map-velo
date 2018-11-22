@@ -19,7 +19,7 @@ var map = {
         //appel des méthodes
         map.makeMap();
         map.addMarkers();
-        map.onClickInfo();
+        map.afficheInfo();
     },
 
     //Méthode de création de la map
@@ -65,8 +65,9 @@ var map = {
         //map.addLayer(markersCluster);
     },
 
-    onClickInfo: function(){
-        $(map.btnInfos).on("click", function(){
+    afficheInfo: function(){
+        console.log("fonction afficheInfo OK!");
+        $(map.btnInfos).on('click', function(){
             console.log("btnInfos clické!");
         });
     }
