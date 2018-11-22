@@ -25,9 +25,25 @@
             <div id="stations" class="stations">
                 <button id="btnStations" class="btn btnStations">btnStations</button>
                 <div id="infostations" class="infostations">
-                    <h3>Détails de la station</h3>
-                    <form>
-                        <button id="btnForm" class="btn btnForm">btnForm</button>
+                    <div class="infoClick">
+                        <h3>Détails de la station</h3>
+                        <p class="stationName">Nom de la station:</p>
+                        <p class="stationAdress">Adresse:</p>
+                        <p class="dispoBike">Nombre de vélos disponibles:</p>
+                        <p class="dispoPlace">Nombre de places disponibles:</p>
+                    </div>
+                    <form class="form">
+                        <div class="elemForm">
+                            <label for="name">Nom :</label>
+                            <input type="text" id="name" name="user_name">
+                        </div>
+                        <div class="elemForm">
+                            <label for="firstname">Votre prénom :</label>
+                            <input type="text" id="firstname" name="user_firstname">
+                        </div>
+                        <div class="booking">
+                            <button id="btnForm" class="btn btnForm">Réserver</button>
+                        </div>
                     </form>
                 </div>
 

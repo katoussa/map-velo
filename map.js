@@ -7,12 +7,11 @@ var map = {
     },
 
     // Initialisation de la map
-    init: function(lat, lng, url, req, markersCluster){
+    init: function(lat, lng, url, req){
         map.lat = lat;
         map.lng = lng;
         map.url = url;
         map.req = req;
-        map.markersCluster = markersCluster;
 
         //appel des méthodes
         map.makeMap();
@@ -52,15 +51,16 @@ var map = {
         map.ajaxGet(map.url, function (reponse) {
             // Transforme la réponse en tableau d'objets JavaScript
             var stations = JSON.parse(reponse);
-                stations.forEach(function(stations){
-                    var marker= new L.marker(stations.position).addTo(map.mapIs);
-                    marker.bindPopup(stations.name);
-                });
+            stations.forEach(function(stations){
+                var marker= new L.marker(stations.position).addTo(map.mapIs);
+                marker.bindPopup(stations.name + '<br/>' + ("<button class='btnInfos'>+ d'infos</button>"));
+            });
             console.log(stations);
             //map.markersCluster.addLayer(marker);
-
-            }); 
+        });
         //map.addLayer(markersCluster);
-    }
+    },
+
+
 };
 

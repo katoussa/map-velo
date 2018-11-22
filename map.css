@@ -33,6 +33,15 @@
     height: 350px;
 }
 
+/* .infostations form{
+    display: none;
+} */
+
+.infostations form .elemForm,
+.infostations form .booking{
+    margin: 0.25em;
+}
+
 .signature{
     height: 200px;
     background-color: rgb(114, 189, 219);

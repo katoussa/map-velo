@@ -29,8 +29,7 @@ var globalMain = {
             objMap.init(globalMain.data.map.lat,
                         globalMain.data.map.lng,
                         globalMain.data.map.url,
-                        globalMain.data.map.req,
-                        globalMain.data.map.markersCluster);
+                        globalMain.data.map.req);
         }
     }
 };
