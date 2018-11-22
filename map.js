@@ -7,15 +7,19 @@ var map = {
     },
 
     // Initialisation de la map
-    init: function(lat, lng, url, req){
+    init: function(lat, lng, url, req, stations, marker, btnInfos){
         map.lat = lat;
         map.lng = lng;
         map.url = url;
         map.req = req;
+        map.stations = stations;
+        map.marker = marker;
+        map.btnInfos = btnInfos;
 
         //appel des méthodes
         map.makeMap();
         map.addMarkers();
+        map.onClickInfo();
     },
 
     //Méthode de création de la map
@@ -50,16 +54,22 @@ var map = {
     addMarkers: function(){
         map.ajaxGet(map.url, function (reponse) {
             // Transforme la réponse en tableau d'objets JavaScript
-            var stations = JSON.parse(reponse);
-            stations.forEach(function(stations){
-                var marker= new L.marker(stations.position).addTo(map.mapIs);
-                marker.bindPopup(stations.name + '<br/>' + ("<button class='btnInfos'>+ d'infos</button>"));
+            map.stations = JSON.parse(reponse);
+            map.stations.forEach(function(stations){
+                map.marker = new L.marker(stations.position).addTo(map.mapIs);
+                map.marker.bindPopup(stations.name + '<br/>' + ("<button class='btnInfos'>+ d'infos</button>"));
             });
-            console.log(stations);
+            console.log(map.stations);
             //map.markersCluster.addLayer(marker);
         });
         //map.addLayer(markersCluster);
     },
+
+    onClickInfo: function(){
+        $(map.btnInfos).on("click", function(){
+            console.log("btnInfos clické!");
+        });
+    }
 
 
 };
