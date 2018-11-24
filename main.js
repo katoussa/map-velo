@@ -8,8 +8,7 @@ var globalMain = {
             req: new XMLHttpRequest(),
             //markersCluster: new L.MarkerClusterGroup()
             stations: [],
-            marker: null,
-            btnInfos: ".btnInfos"
+            marker: null
         },
 
         stations: {
@@ -34,8 +33,7 @@ var globalMain = {
                         globalMain.data.map.url,
                         globalMain.data.map.req,
                         globalMain.data.map.stations,
-                        globalMain.data.map.marker,
-                        globalMain.data.map.btnInfos);
+                        globalMain.data.map.marker);
         }
     }
 };

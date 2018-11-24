@@ -37,12 +37,32 @@
     border-radius: 5px;
 }
 
-/* .infostations form{
+.elemFormInvisible1,
+.elemFormInvisible2{
     display: none;
-} */
+}
 
-.infostations form .elemForm,
-.infostations form .booking{
+.elemFormVisible1,
+.elemFormVisible2{
+    display: block;
+}
+
+.noBikes{
+    display: none;
+}
+
+.nobikesVisible{
+    display: block;
+}
+
+.bolt{
+    font-weight: 800;
+}
+
+.infostations form .elemFormInvisible,
+.infostations form .elemFormVisible,
+.infostations form .bookingInvisible,
+.infostations form .bookingVisible{
     margin: 0.25em;
 }
 
