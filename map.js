@@ -58,14 +58,15 @@ var map = {
                 map.marker = new L.marker(stations.position).addTo(map.mapIs);
                 map.marker.bindPopup(stations.name + '<br/>' + ("<button id='btnInfo' class='btnInfo' onclick='return map.afficheInfo()' ontap='return map.afficheInfo()'>+ d'infos</button>"));
                 map.afficheInfo = function(){ //affiche infos de station onClick btnInfo
-                    console.log("btnInfos clické!");
                     document.querySelector(".stationName").innerHTML= "<span class='bolt'>Nom de la station: </span>" + stations.name;
                     document.querySelector(".stationAdress").innerHTML= "<span class='bolt'>Adresse: </span>" + stations.address;
                     document.querySelector(".dispoBike").innerHTML= "<span class='bolt'>Nombre de vélos disponibles: </span>" + stations.available_bikes;
                     document.querySelector(".dispoPlace").innerHTML= "<span class='bolt'>Nombre de places disponibles: </span>" + stations.available_bike_stands;
+                    
                     if(stations.available_bikes > 0){ //si vélo dispos entrer nom + prénom
                         document.querySelector(".elemFormInvisible1").className = ".elemFormVisible1";
                         document.querySelector(".elemFormInvisible2").className = ".elemFormVisible2";
+                        document.querySelector(".bookingInvisible").className = ".bookingVisible";
                         map.validInput = function(){ //valide entrée string dans input
                             map.nom = document.getElementById("nom");
                             map.prenom = document.getElementById("prenom");
@@ -83,9 +84,11 @@ var map = {
                                 console.log("mauvais contenu");
                             };
                         };
+
                     }else{ //sinon affiche "pas de vélos dispos"
                         document.querySelector(".noBikes").className = ".noBikesVisible";
                     };
+                    
                 };
             });
 

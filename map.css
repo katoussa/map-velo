@@ -38,12 +38,14 @@
 }
 
 .elemFormInvisible1,
-.elemFormInvisible2{
+.elemFormInvisible2,
+.bookingInvisible{
     display: none;
 }
 
 .elemFormVisible1,
-.elemFormVisible2{
+.elemFormVisible2,
+.bookingVisible{
     display: block;
 }
 
@@ -59,11 +61,9 @@
     font-weight: 800;
 }
 
-.infostations form .elemFormInvisible,
-.infostations form .elemFormVisible,
-.infostations form .bookingInvisible,
-.infostations form .bookingVisible{
-    margin: 0.25em;
+.form label,
+.form input{
+    margin: 0.25em 0.75em;
 }
 
 .signature{
