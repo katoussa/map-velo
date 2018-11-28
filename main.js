@@ -6,9 +6,9 @@ var globalMain = {
             lng: 4.850000,
             url: "https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=aafd8fb136e33eb56306745265f47b4f6770d3cb",
             req: new XMLHttpRequest(),
-            //markersCluster: new L.MarkerClusterGroup()
+            //markersCluster: new L.MarkerClusterGroup(),
             stations: [],
-            marker: null
+            marker: []
         },
 
         stations: {
