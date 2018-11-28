@@ -61,6 +61,7 @@ var map = {
                     document.querySelector(".dispoPlace").innerHTML= "<span class='bolt'>Nombre de places disponibles: </span>" + map.stations[i].available_bike_stands;
                     
                     if(map.stations[i].available_bikes != 0){ //si vélo dispos entrer nom + prénom
+                        console.log("vélos dispos > 0 ! Pouloulou!");
                         $(map.form).className = ".formVisible";
                         //map.validInput = function(){ //valide entrée string dans input
                             //map.nom = document.getElementById("nom");
