@@ -37,15 +37,11 @@
     border-radius: 5px;
 }
 
-.elemFormInvisible1,
-.elemFormInvisible2,
-.bookingInvisible{
+.formInvisible{
     display: none;
-}
+} 
 
-.elemFormVisible1,
-.elemFormVisible2,
-.bookingVisible{
+.elemFormVisible{
     display: block;
 }
 
