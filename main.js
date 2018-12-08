@@ -16,7 +16,10 @@ var globalMain = {
             dispoBike: ".dispoBike",
             dispoPlace: ".dispoPlace",
             formInvisible: "formInvisible",
-            noBikes: "noBikes"
+            noBikes: "noBikes",
+            icon: ".leaflet-marker-icon",
+            imgSrc1: "https://cdn.pixabay.com/photo/2018/05/01/15/06/marker-3365838_960_720.png",
+            imgSrc2: "https://pngimage.net/wp-content/uploads/2018/06/simbolo-de-ubicacion-png-6.png"
         },
 
         signature: {
@@ -40,7 +43,10 @@ var globalMain = {
                             globalMain.data.stations.dispoBike,
                             globalMain.data.stations.dispoPlace,
                             globalMain.data.stations.formInvisible,
-                            globalMain.data.stations.noBikes);
+                            globalMain.data.stations.noBikes,
+                            globalMain.data.stations.icon,
+                            globalMain.data.stations.imgSrc1,
+                            globalMain.data.stations.imgSrc2);
         }
     }
 };
