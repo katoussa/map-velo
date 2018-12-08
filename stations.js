@@ -11,7 +11,7 @@ var stations = {
         stations.formInvisible = formInvisible;
         stations.noBikes = noBikes;
         
-        stations.ajaxGet();
+        stations.ajaxGet(stations.url);
         stations.addMarkers();
     },
 
