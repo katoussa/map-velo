@@ -1,9 +1,15 @@
 var stations = {
-    init: function(url, req,station, marker) {
+    init: function(url, req,station, marker, stationName, stationAdress, dispoBike, dispoPlace, formInvisible, noBikes) {
         stations.url = url;
         stations.req = req;
         stations.station = station;
         stations.marker = marker;
+        stations.stationName = stationName;
+        stations.stationAdress = stationAdress;
+        stations.dispoBike = dispoBike;
+        stations.dispoPlace = dispoPlace;
+        stations.formInvisible = formInvisible;
+        stations.noBikes = noBikes;
         
         stations.ajaxGet();
         stations.addMarkers();
@@ -11,7 +17,6 @@ var stations = {
 
     //Méthode de récupération des données de l'API
     ajaxGet: function(url, callback){
-        stations.url = url;
         stations.req.open("GET", stations.url);
         stations.req.addEventListener("load", function () {  //vérification chargement
             if (stations.req.status >= 200 && stations.req.status < 400) {
@@ -38,17 +43,17 @@ var stations = {
                 stations.marker.bindPopup(stations.stations[i].name + '<br/>' + ("<button class='btnInfo' onclick='return stations.afficheInfo(" + i + ")' ontap='return stations.afficheInfo(" + i + ")'>+ d'infos</button>"));
                 
                 stations.afficheInfo = function(i){ //affiche infos de station onClick btnInfo
-                    document.querySelector(".stationName").innerHTML= "<span class='bolt'>Nom de la station: </span>" + stations.stations[i].name;
-                    document.querySelector(".stationAdress").innerHTML= "<span class='bolt'>Adresse: </span>" + stations.stations[i].address;
-                    document.querySelector(".dispoBike").innerHTML= "<span class='bolt'>Nombre de vélos disponibles: </span>" + stations.stations[i].available_bikes;
-                    document.querySelector(".dispoPlace").innerHTML= "<span class='bolt'>Nombre de places disponibles: </span>" + stations.stations[i].available_bike_stands;
+                    document.querySelector(stationName).innerHTML= "<span class='bolt'>Nom de la station: </span>" + stations.stations[i].name;
+                    document.querySelector(stationAdress).innerHTML= "<span class='bolt'>Adresse: </span>" + stations.stations[i].address;
+                    document.querySelector(dispoBike).innerHTML= "<span class='bolt'>Nombre de vélos disponibles: </span>" + stations.stations[i].available_bikes;
+                    document.querySelector(dispoPlace).innerHTML= "<span class='bolt'>Nombre de places disponibles: </span>" + stations.stations[i].available_bike_stands;
                     
                     if(stations.stations[i].available_bikes > 0){ //si vélo dispos entrer nom + prénom
-                        document.getElementById("formInvisible").className = "formVisible";
-                        document.getElementById("noBikes").className = "noBikes";
+                        document.getElementById(formInvisible).className = "formVisible";
+                        document.getElementById(noBikes).className = "noBikes";
                     }else{ //sinon affiche "pas de vélos dispos"
-                        document.getElementById("noBikes").className = "noBikesVisible";
-                        document.getElementById("formInvisible").className = "formInvisible";
+                        document.getElementById(noBikes).className = "noBikesVisible";
+                        document.getElementById(formInvisible).className = "formInvisible";
                     };
                 };
 
