@@ -41,6 +41,12 @@ var stations = {
                 console.log(stations.marker);
                 stations.marker.bindPopup(stations.stations[i].name + '<br/>' + ("<button class='btnInfo' onclick='return stations.afficheInfo(" + i + ")' ontap='return stations.afficheInfo(" + i + ")'>+ d'infos</button>"));
                 
+                if(stations.stations[i].available_bikes > 0){
+                    stations.marker.setStyle({fillColor:"#239CFF"});
+                }else{
+                    stations.marker.setStyle({fillColor:"#ff0000"});
+                };
+
                 stations.afficheInfo = function(i){ //affiche infos de station onClick btnInfo
                     document.querySelector(stations.stationName).innerHTML= "<span class='bolt'>Nom de la station: </span>" + stations.stations[i].name;
                     document.querySelector(stations.stationAdress).innerHTML= "<span class='bolt'>Adresse: </span>" + stations.stations[i].address;
