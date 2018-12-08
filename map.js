@@ -18,17 +18,7 @@ var map = {
                     maxZoom: 20
                 }).addTo(map.mapIs);
         console.log(map.mapIs);
-    },
-
-    
-    //Méthode de récupération des données de l'API
-    /*ajaxGet: function(url, callback){
-        
-    },*/
-
-    
-
-
+    }
 
 };
 

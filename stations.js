@@ -11,7 +11,6 @@ var stations = {
         stations.formInvisible = formInvisible;
         stations.noBikes = noBikes;
         
-        stations.ajaxGet(stations.url);
         stations.addMarkers();
     },
 
@@ -30,7 +29,7 @@ var stations = {
         });
         stations.req.send(null);
     },
-
+    
     //Méthode de création des markers
     addMarkers: function(){
         stations.ajaxGet(stations.url, function (reponse) {
@@ -42,7 +41,7 @@ var stations = {
                 console.log(stations.marker);
                 stations.marker.bindPopup(stations.stations[i].name + '<br/>' + ("<button class='btnInfo' onclick='return stations.afficheInfo(" + i + ")' ontap='return stations.afficheInfo(" + i + ")'>+ d'infos</button>"));
                 
-                stations.afficheInfo = function(i){ //affiche infos de station onClick btnInfo
+                map.afficheInfo = function(i){ //affiche infos de station onClick btnInfo
                     document.querySelector(stationName).innerHTML= "<span class='bolt'>Nom de la station: </span>" + stations.stations[i].name;
                     document.querySelector(stationAdress).innerHTML= "<span class='bolt'>Adresse: </span>" + stations.stations[i].address;
                     document.querySelector(dispoBike).innerHTML= "<span class='bolt'>Nombre de vélos disponibles: </span>" + stations.stations[i].available_bikes;
@@ -62,4 +61,5 @@ var stations = {
         });
     }
     
+
 };
