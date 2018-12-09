@@ -28,7 +28,7 @@ var globalMain = {
         form: {
             name: document.getElementById("name"),
             firstname: document.getElementById("firstname"),
-            signature: document.getElementById("signature")
+            button: document.getElementById("btnForm")
         },
 
         signature: {
@@ -60,7 +60,7 @@ var globalMain = {
             var objForm = Object.create(form);
             objForm.init(globalMain.data.form.name,
                         globalMain.data.form.firstname,
-                        globalMain.data.form.signature);
+                        globalMain.data.form.button);
         }
     }
 };
