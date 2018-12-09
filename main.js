@@ -25,6 +25,12 @@ var globalMain = {
             noBikes: "noBikes"
         },
 
+        form: {
+            name: document.getElementById("name"),
+            firstname: document.getElementById("firstname"),
+            valid: document.getElementById("")
+        },
+
         signature: {
             button: "#btnSign"
         }
@@ -51,6 +57,9 @@ var globalMain = {
                             globalMain.data.infos.dispoPlace,
                             globalMain.data.infos.formInvisible,
                             globalMain.data.infos.noBike);
+            var objForm = Object.create(form);
+            objForm.init(globalMain.data.form.name,
+                        globalMain.data.form.firstname);
         }
     }
 };
