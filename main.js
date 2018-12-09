@@ -65,6 +65,6 @@ var globalMain = {
     }
 };
 
-$(function(){
+//$(function(){
     globalMain.methods.init();
-});
+//});
