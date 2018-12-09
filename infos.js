@@ -7,7 +7,7 @@ var infos = {
         infos.formInvisible = formInvisible;
         infos.noBikes = noBikes;
 
-        infos.afficheInfo();
+        infos.afficheInfo(i);
     },
 
     afficheInfo: function(i){ //affiche infos de station onClick btnInfo
