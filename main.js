@@ -2,7 +2,7 @@ var globalMain = {
     data: {
         map: { //Données de la map
             button: "#btnMap",
-            lat: 45.750000,
+            lat: 45.765000,
             lng: 4.850000
         },
 
