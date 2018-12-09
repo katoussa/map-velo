@@ -9,9 +9,11 @@ var form = {
 
     testRegExp: function(){
         form.regName = false;
+        form.regexName = /(a-z) (\-)/;
         form.regFirstname= false;
-        form.name.addEventListener("blur", function() {
-            if((form.name.textContent = /(a-z) (\-)/ ) && (form.name.length > 3)){
+        form.regexFirstname = /(a-z) (\-)/;
+        form.name.addEventListener("input", function() {
+            if((!form.regexName.test(e.target.value)) && (form.name.length > 3)){
                 form.regName = true;
                 console.log("regName est true");
             }else{
@@ -20,8 +22,8 @@ var form = {
             };
         });
 
-        form.firstname.addEventListener("blur", function() {
-            if((form.firstname.textContent = /(a-z) (\-)/ ) && (form.firstname.length > 3)){
+        form.firstname.addEventListener("input", function() {
+            if((!form.regexFirstname.test(e.target.value)) && (form.firstname.length > 3)){
                 form.regFirstname = true;
                 console.log("regFirstame est true");
             }else{
