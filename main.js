@@ -28,7 +28,7 @@ var globalMain = {
         form: {
             name: document.getElementById("name"),
             firstname: document.getElementById("firstname"),
-            valid: document.getElementById("")
+            signature: document.getElementById("signature")
         },
 
         signature: {
@@ -56,10 +56,11 @@ var globalMain = {
                             globalMain.data.infos.dispoBike,
                             globalMain.data.infos.dispoPlace,
                             globalMain.data.infos.formInvisible,
-                            globalMain.data.infos.noBike);
+                            globalMain.data.infos.noBikes);
             var objForm = Object.create(form);
             objForm.init(globalMain.data.form.name,
-                        globalMain.data.form.firstname);
+                        globalMain.data.form.firstname,
+                        globalMain.data.form.signature);
         }
     }
 };
