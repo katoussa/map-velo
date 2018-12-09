@@ -1,15 +1,9 @@
 var stations = {
-    init: function(url, req,station, marker, stationName, stationAdress, dispoBike, dispoPlace, formInvisible, noBikes, icon, imgSrc1, imgSrc2) {
+    init: function(url, req,station, marker, icon, imgSrc1, imgSrc2) {
         stations.url = url;
         stations.req = req;
         stations.station = station;
         stations.marker = marker;
-        stations.stationName = stationName;
-        stations.stationAdress = stationAdress;
-        stations.dispoBike = dispoBike;
-        stations.dispoPlace = dispoPlace;
-        stations.formInvisible = formInvisible;
-        stations.noBikes = noBikes;
         stations.icon = icon;
         stations.imgSrc1 = imgSrc1;
         stations.imgSrc2 = imgSrc2;
@@ -57,24 +51,7 @@ var stations = {
                 };
                 
                 console.log(stations.marker);
-                stations.marker.bindPopup(stations.stations[i].name + '<br/>' + ("<button class='btnInfo' onclick='return stations.afficheInfo(" + i + ")' ontap='return stations.afficheInfo(" + i + ")'>+ d'infos</button>"));
-                
-
-                stations.afficheInfo = function(i){ //affiche infos de station onClick btnInfo
-                    document.querySelector(stations.stationName).innerHTML= "<span class='bolt'>Nom de la station: </span>" + stations.stations[i].name;
-                    document.querySelector(stations.stationAdress).innerHTML= "<span class='bolt'>Adresse: </span>" + stations.stations[i].address;
-                    document.querySelector(stations.dispoBike).innerHTML= "<span class='bolt'>Nombre de vélos disponibles: </span>" + stations.stations[i].available_bikes;
-                    document.querySelector(stations.dispoPlace).innerHTML= "<span class='bolt'>Nombre de places disponibles: </span>" + stations.stations[i].available_bike_stands;
-                    
-                    if(stations.stations[i].available_bikes > 0){ //si vélo dispos entrer nom + prénom
-                        document.getElementById(stations.formInvisible).className = "formVisible";
-                        document.getElementById(stations.noBikes).className = "noBikes";
-                    }else{ //sinon affiche "pas de vélos dispos"
-                        document.getElementById(stations.noBikes).className = "noBikesVisible";
-                        document.getElementById(stations.formInvisible).className = "formInvisible";
-                    };
-                };
-
+                stations.marker.bindPopup(stations.stations[i].name + '<br/>' + ("<button class='btnInfo' onclick='return infos.afficheInfo(" + i + ")' ontap='return infos.afficheInfo(" + i + ")'>+ d'infos</button>"));
                 
             };
         });

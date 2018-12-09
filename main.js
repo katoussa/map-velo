@@ -11,15 +11,18 @@ var globalMain = {
             req: new XMLHttpRequest(),
             station: [],
             marker: [],
+            icon: ".leaflet-marker-icon",
+            imgSrc1: "https://cdn.pixabay.com/photo/2018/05/01/15/06/marker-3365838_960_720.png",
+            imgSrc2: "https://pngimage.net/wp-content/uploads/2018/06/simbolo-de-ubicacion-png-6.png"
+        },
+
+        infos:{
             stationName: ".stationName",
             stationAdress: ".stationAdress",
             dispoBike: ".dispoBike",
             dispoPlace: ".dispoPlace",
             formInvisible: "formInvisible",
-            noBikes: "noBikes",
-            icon: ".leaflet-marker-icon",
-            imgSrc1: "https://cdn.pixabay.com/photo/2018/05/01/15/06/marker-3365838_960_720.png",
-            imgSrc2: "https://pngimage.net/wp-content/uploads/2018/06/simbolo-de-ubicacion-png-6.png"
+            noBikes: "noBikes"
         },
 
         signature: {
@@ -38,15 +41,16 @@ var globalMain = {
                             globalMain.data.stations.req,
                             globalMain.data.stations.station,
                             globalMain.data.stations.marker,
-                            globalMain.data.stations.stationName,
-                            globalMain.data.stations.stationAdress,
-                            globalMain.data.stations.dispoBike,
-                            globalMain.data.stations.dispoPlace,
-                            globalMain.data.stations.formInvisible,
-                            globalMain.data.stations.noBikes,
                             globalMain.data.stations.icon,
                             globalMain.data.stations.imgSrc1,
                             globalMain.data.stations.imgSrc2);
+            var objInfos = Object.create(infos);
+            objInfos.init(globalMain.data.infos.stationName,
+                            globalMain.data.infos.stationAdress,
+                            globalMain.data.infos.dispoBike,
+                            globalMain.data.infos.dispoPlace,
+                            globalMain.data.infos.formInvisible,
+                            globalMain.data.infos.noBike);
         }
     }
 };
