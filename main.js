@@ -17,10 +17,10 @@ var globalMain = {
         },
 
         infos:{
-            stationName: ".stationName",
-            stationAdress: ".stationAdress",
-            dispoBike: ".dispoBike",
-            dispoPlace: ".dispoPlace",
+            stationName: document.getElementById("stationName"),
+            stationAdress: document.getElementById("stationAdress"),
+            dispoBike: document.getElementById("dispoBike"),
+            dispoPlace: document.getElementById("dispoPlace"),
             formInvisible: "formInvisible",
             noBikes: "noBikes"
         },

@@ -7,14 +7,15 @@ var infos = {
         infos.formInvisible = formInvisible;
         infos.noBikes = noBikes;
 
-        infos.afficheInfo(i);
+        infos.afficheInfo();
     },
 
     afficheInfo: function(i){ //affiche infos de station onClick btnInfo
-        document.querySelector(infos.stationName).innerHTML= "<span class='bolt'>Nom de la station: </span>" + stations.stations[i].name;
-        document.querySelector(infos.stationAdress).innerHTML= "<span class='bolt'>Adresse: </span>" + stations.stations[i].address;
-        document.querySelector(infos.dispoBike).innerHTML= "<span class='bolt'>Nombre de vélos disponibles: </span>" + stations.stations[i].available_bikes;
-        document.querySelector(infos.dispoPlace).innerHTML= "<span class='bolt'>Nombre de places disponibles: </span>" + stations.stations[i].available_bike_stands;
+        console.log("stationName" + stations.stations[i].name);
+        infos.stationName.innerHTML= "<span class='bolt'>Nom de la station: </span>" + stations.stations[i].name;
+        infos.stationAdress.innerHTML= "<span class='bolt'>Adresse: </span>" + stations.stations[i].address;
+        infos.dispoBike.innerHTML= "<span class='bolt'>Nombre de vélos disponibles: </span>" + stations.stations[i].available_bikes;
+        infos.dispoPlace.innerHTML= "<span class='bolt'>Nombre de places disponibles: </span>" + stations.stations[i].available_bike_stands;
         
         if(stations.stations[i].available_bikes > 0){ //si vélo dispos entrer nom + prénom
             document.getElementById(infos.formInvisible).className = "formVisible";
