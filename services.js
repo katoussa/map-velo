@@ -1,20 +1,18 @@
 var services = {
-    getData: function(url, station) { //appel de l'API
-        services.url = url;
-        services.station = station;
-        console.log('2 - Le service a été demandé');
-        services.thisData = new Promise(function(resolve, reject) {
+    getData: function(url) {
+        console.log('2 - Le service Ă  ete demandĂŠ');
+        var thisData = new Promise(function(resolve, reject) {
             $.get(url, function(dataPromise) {
-                if (dataPromise) { //résolu
-                    services.station = JSON.parse(services.url);
-                    console.log(services.station);
+                if (dataPromise) {
+                    console.log(dataPromise.responseText);
+                    console.log('3 - Le service a trouve un rĂŠsultat');
                     return resolve(dataPromise);
-                }else { //échec
+                }else {
                     console.log('3 - Le service n\'a pas trouve un resultat');
                     return reject(err)
                 }
             })
         });
-        return services.thisData;
+        return thisData;
     }
 };

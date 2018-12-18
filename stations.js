@@ -1,8 +1,5 @@
 var stations = {
-    init: function(url, req,station, marker, icon, imgSrc1, imgSrc2) {
-        stations.url = url;
-        stations.req = req;
-        stations.station = station;
+    init: function(marker, icon, imgSrc1, imgSrc2) {
         stations.marker = marker;
         stations.icon = icon;
         stations.imgSrc1 = imgSrc1;
@@ -10,22 +7,6 @@ var stations = {
         
         stations.addMarkers();
     },
-
-    //Méthode de récupération des données de l'API
-    /*ajaxGet: function(url, callback){
-        stations.req.open("GET", stations.url);
-        stations.req.addEventListener("load", function () {  //vérification chargement
-            if (stations.req.status >= 200 && stations.req.status < 400) {
-                callback(stations.req.responseText);  //vérification
-            } else {
-                console.error(stations.req.status + " " + stations.req.statusText + " " + stations.url);
-            }
-        });
-        stations.req.addEventListener("error", function () { //si erreur
-            console.error("Erreur réseau avec l'URL " + stations.url);
-        });
-        stations.req.send(null);
-    },*/
     
     //Méthode de création des markers
     addMarkers: function(){

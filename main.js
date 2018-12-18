@@ -2,8 +2,7 @@ var globalMain = {
     data: {
 
         services: {
-            url: "https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=aafd8fb136e33eb56306745265f47b4f6770d3cb",
-            station: []
+            url: "https://api.jcdecaux.com/vls/v1/stations?contract=lyon&apiKey=aafd8fb136e33eb56306745265f47b4f6770d3cb"
         },
 
         map: { //Données de la map
@@ -13,8 +12,6 @@ var globalMain = {
         },
 
         stations: {
-            req: new XMLHttpRequest,
-            station: services.station,
             marker: [],
             icon: ".leaflet-marker-icon",
             imgSrc1: "https://cdn.pixabay.com/photo/2018/05/01/15/06/marker-3365838_960_720.png",
@@ -44,10 +41,10 @@ var globalMain = {
 
     methods: {
         init: function(){
+
             //Création objet Services
             var objServices = Object.create(services);
-            objServices.getData(globalMain.data.services.url,
-                                globalMain.data.services.station);
+            objServices.getData(globalMain.data.services.url);
             //Création objet map + attribution des données
             var objMap = Object.create(map);
             objMap.init(globalMain.data.map.lat,
