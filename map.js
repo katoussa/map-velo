@@ -17,9 +17,7 @@ var map = {
                     minZoom: 1,
                     maxZoom: 20
                 }).addTo(map.mapIs);
-        console.log(map.mapIs);
     }
-
 };
 
 

@@ -34,23 +34,23 @@ var form = {
         });
 
         
-        form.button.on("click", function(){
-            if(form.regName === true){
-                form.name.value = "Vous devez entrer votre nom";
-            };
+        // form.button.on("click", function(){
+        //     if(form.regName === true){
+        //         form.name.value = "Vous devez entrer votre nom";
+        //     };
 
-            if(form.regFirstname === true){
-                form.firstname.value = "Vous devez entrer votre prénom";
-            };
+        //     if(form.regFirstname === true){
+        //         form.firstname.value = "Vous devez entrer votre prénom";
+        //     };
 
-            console.log(form.regName + "et" + form.regFirstname);
+        //     console.log(form.regName + "et" + form.regFirstname);
 
-            if(form.regName === true && form.regFirstname === true){
-                form.signature.className = "signatureVisible";
-            }else{
-                form.signature.className = "signature";
-            };
-        });
+        //     if(form.regName === true && form.regFirstname === true){
+        //         form.signature.className = "signatureVisible";
+        //     }else{
+        //         form.signature.className = "signature";
+        //     };
+        // });
         
     }
 };
