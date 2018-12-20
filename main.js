@@ -27,10 +27,12 @@ var globalMain = {
         form: {
             name: document.getElementById("name"),
             firstname: document.getElementById("firstname"),
-            button: document.getElementById("btnForm")
+            button: document.getElementById("btnForm"),
+            messError1: document.getElementById("messError1"),
+            messError2: document.getElementById("messError2")
         },
         signature: {
-            button: "#btnSign"
+            signature: document.getElementById("signature")
         }
     },
     methods: {
@@ -51,7 +53,6 @@ var globalMain = {
             objServices.getData(globalMain.data.services.url)
                 .then(function(data) {
                     globalMain.data.stations.stations = data;
-                    console.log('globalMain.data.stations.stations', globalMain.data.stations.stations)
                     objStations.init(
                         globalMain.data.stations.stations,
                         globalMain.data.stations.marker,
@@ -72,13 +73,13 @@ var globalMain = {
                     
                 });
 
-            
-             
-            
             objForm.init(
                 globalMain.data.form.name,
                 globalMain.data.form.firstname,
-                globalMain.data.form.button
+                globalMain.data.form.button,
+                globalMain.data.form.messError1,
+                globalMain.data.form.messError2,
+                globalMain.data.signature.signature
             );
         }
     }
