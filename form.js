@@ -41,7 +41,7 @@ var form = {
                 form.messError2.innerHTML = "Vous devez entrer votre prénom";
             };
 
-            console.log(form.regName + "et" + form.regFirstname);
+            console.log(form.regName + " et " + form.regFirstname);
 
             if(form.regName === true && form.regFirstname === true){
                 signature.className = "signatureVisible";
