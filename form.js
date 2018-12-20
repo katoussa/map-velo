@@ -12,19 +12,19 @@ var form = {
     testRegExp: function(){
         console.log("regExp ok!");
         form.regName = false;
-        form.regexName = /(a-z) (\-)/;
+        form.regexName = form.name.length;
         form.regFirstname= false;
-        form.regexFirstname = /(a-z) (\-)/;
-        form.name.addEventListener("input", function(e) {
-            if((!form.regexName.test(e.target.value)) && (form.name.length > 3)){
+        form.regexFirstname = form.firstname.length;
+        form.name.addEventListener("submit", function(e) {
+            if( form.regexName > 3){
                 form.regName = true;
             }else{
                 form.regName = false;
             };
         });
 
-        form.firstname.addEventListener("input", function(e) {
-            if((!form.regexFirstname.test(e.target.value)) && (form.firstname.length > 3)){
+        form.firstname.addEventListener("submit", function(e) {
+            if(form.regexFirstname > 3){
                 form.regFirstname = true;
             }else{
                 form.regFirstname = false;
