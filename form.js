@@ -15,7 +15,7 @@ var form = {
         form.regFirstname= false;
         form.lengthFirstname = form.firstname.value.length;
 
-        form.name.addEventListener("click", function() {
+        form.name.addEventListener("blur", function() {
             console.log("name:", form.lengthName);
             if( form.lengthName > 3){
                 form.regName = true;
@@ -24,7 +24,7 @@ var form = {
             };
         });
 
-        form.firstname.addEventListener("click", function() {
+        form.firstname.addEventListener("blur", function() {
             console.log("name:", form.lengthFirstname);
             if(form.lengthFirstname > 3){
                 form.regFirstname = true;
