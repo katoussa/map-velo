@@ -15,23 +15,23 @@ var form = {
         form.regFirstname= false;
         form.lengthFirstname = form.firstname.value.length;
 
-        form.testName = function(lengthName) {
-            console.log("name:", lengthName);
+        form.name.addEventListener("click", function() {
+            console.log("name:", form.lengthName);
             if( form.lengthName > 3){
                 form.regName = true;
             }else{
                 form.regName = false;
             };
-        };
+        });
 
-        form.testFirstname = function() {
+        form.firstname.addEventListener("click", function() {
             console.log("name:", form.lengthFirstname);
             if(form.lengthFirstname > 3){
                 form.regFirstname = true;
             }else{
                 form.regFirstname = false;
             };
-        };
+        });
 
         
         form.button.addEventListener("click", function(){
