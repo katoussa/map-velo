@@ -6,30 +6,32 @@ var form = {
         form.messError1 = messError1;
         form.messError2 = messError2;
 
-        form.testRegExp(signature);
     },
 
-    testRegExp: function(){
+    testForm: function(){
         console.log("regExp ok!");
         form.regName = false;
-        form.regexName = form.name.value.length;
+        form.lengthName = form.name.value.length;
         form.regFirstname= false;
-        form.regexFirstname = form.firstname.value.length;
-        form.name.addEventListener("input", function(e) {
-            if( form.regexName > 3){
+        form.lengthFirstname = form.firstname.value.length;
+
+        form.testName = function(lengthName) {
+            console.log("name:", lengthName);
+            if( form.lengthName > 3){
                 form.regName = true;
             }else{
                 form.regName = false;
             };
-        });
+        };
 
-        form.firstname.addEventListener("input", function(e) {
-            if(form.regexFirstname > 3){
+        form.testFirstname = function() {
+            console.log("name:", form.lengthFirstname);
+            if(form.lengthFirstname > 3){
                 form.regFirstname = true;
             }else{
                 form.regFirstname = false;
             };
-        });
+        };
 
         
         form.button.addEventListener("click", function(){
