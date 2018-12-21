@@ -12,10 +12,10 @@ var form = {
     testRegExp: function(){
         console.log("regExp ok!");
         form.regName = false;
-        form.regexName = form.name.length;
+        form.regexName = form.name.value.length;
         form.regFirstname= false;
-        form.regexFirstname = form.firstname.length;
-        form.name.addEventListener("submit", function(e) {
+        form.regexFirstname = form.firstname.value.length;
+        form.name.addEventListener("input", function(e) {
             if( form.regexName > 3){
                 form.regName = true;
             }else{
@@ -23,7 +23,7 @@ var form = {
             };
         });
 
-        form.firstname.addEventListener("submit", function(e) {
+        form.firstname.addEventListener("input", function(e) {
             if(form.regexFirstname > 3){
                 form.regFirstname = true;
             }else{
