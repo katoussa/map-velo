@@ -1,56 +1,63 @@
 var form = {
-    init: function(name, firstname, button, messError1, messError2, signature){
+    init: function(name, firstname, button, messError1, messError2, messError){
         form.name = name;
         form.firstname = firstname;
         form.button = button;
         form.messError1 = messError1;
         form.messError2 = messError2;
+        form.messError = messError;
 
+        form.testInputs();
+        form.btnActive();
+        form.validForm();
     },
 
-    testForm: function(){
-        console.log("regExp ok!");
+    testInputs: function(){
+        console.log("regExp ok! " + form.name.value.length);
         form.regName = false;
-        form.lengthName = form.name.value.length;
         form.regFirstname= false;
-        form.lengthFirstname = form.firstname.value.length;
 
-        form.name.addEventListener("blur", function() {
-            console.log("name:", form.lengthName);
-            if( form.lengthName > 3){
-                form.regName = true;
-            }else{
+        form.name.addEventListener("input", function() {
+            if( form.name.value.length < 3){
+                form.messError1.className = "messError1v";
                 form.regName = false;
+            }else{
+                form.regName = true;
+                form.messError1.className = "messError1";
             };
         });
 
-        form.firstname.addEventListener("blur", function() {
-            console.log("name:", form.lengthFirstname);
-            if(form.lengthFirstname > 3){
-                form.regFirstname = true;
-            }else{
+        form.firstname.addEventListener("input", function() {
+            if(form.firstname.value.length < 3){
                 form.regFirstname = false;
-            };
-        });
-
-        
-        form.button.addEventListener("click", function(){
-            if(form.regName === true){
-                form.messError1.innerHTML = "Vous devez entrer votre nom";
-            };
-
-            if(form.regFirstname === true){
-                form.messError2.innerHTML = "Vous devez entrer votre prénom";
-            };
-
-            console.log(form.regName + " et " + form.regFirstname);
-
-            if(form.regName === true && form.regFirstname === true){
-                signature.className = "signatureVisible";
+                form.messError2.className = "messError2v";
             }else{
-                signature.className = "signature";
+                form.regFirstname = true;
+                form.messError2.className = "messError2";
             };
         });
-        
+    },
+
+    btnActive: function(){
+        $(messError).onkeyup(function(){
+            if(form.regName === false || form.regFirstname === false){
+                form.button.disabled = true;
+            }else if(form.regName === true && form.regFirstname === true){
+                form.button.disabled = false;
+            };
+        });
+    },
+
+    validForm: function(){
+        form.button.addEventListener("click", function(){
+            console.log("click btn ok");
+            if(form.regName === false || form.regFirstname === false){
+                console.log("form no valid");
+                //signature.className = "signatureVisible";
+            }else{
+                console.log("form valid");
+                //signature.className = "signature";
+            };
+        });
     }
 };
