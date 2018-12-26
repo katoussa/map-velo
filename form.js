@@ -1,15 +1,14 @@
 var form = {
-    init: function(name, firstname, button, messError1, messError2, messError){
+    init: function(name, firstname, button, messError1, messError2, signature){
         form.name = name;
         form.firstname = firstname;
         form.button = button;
         form.messError1 = messError1;
         form.messError2 = messError2;
-        form.messError = messError;
 
         form.testInputs();
         form.btnActive();
-        form.validForm();
+        form.validForm(signature);
     },
 
     testInputs: function(){
@@ -39,7 +38,7 @@ var form = {
     },
 
     btnActive: function(){
-        $(messError).onkeyup(function(){
+        document.getElementById("formInvisible").addEventListener("keyup", function(){
             if(form.regName === false || form.regFirstname === false){
                 form.button.disabled = true;
             }else if(form.regName === true && form.regFirstname === true){
@@ -48,15 +47,15 @@ var form = {
         });
     },
 
-    validForm: function(){
+    validForm: function(signature){
         form.button.addEventListener("click", function(){
             console.log("click btn ok");
             if(form.regName === false || form.regFirstname === false){
                 console.log("form no valid");
-                //signature.className = "signatureVisible";
+                signature.className = "signature";
             }else{
                 console.log("form valid");
-                //signature.className = "signature";
+                signature.className = "signatureVisible";
             };
         });
     }

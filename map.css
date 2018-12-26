@@ -78,11 +78,11 @@
 }
 
 .signature{
-    height: 200px;
-    background-color: rgb(114, 189, 219);
     display: none;
 }
 
 .signatureVisible{
     display: block;
+    height: 200px;
+    background-color: rgb(114, 189, 219);
 }
