@@ -29,7 +29,9 @@ var globalMain = {
             firstname: document.getElementById("firstname"),
             button: document.getElementById("btnForm"),
             messError1: document.getElementById("messError1"),
-            messError2: document.getElementById("messError2")
+            messError2: document.getElementById("messError2"),
+            getName: "",
+            getFirstname: ""
         },
         signature: {
             signature: document.getElementById("signature")
@@ -79,6 +81,8 @@ var globalMain = {
                 globalMain.data.form.button,
                 globalMain.data.form.messError1,
                 globalMain.data.form.messError2,
+                globalMain.data.form.getName,
+                globalMain.data.form.getFirstname,
                 globalMain.data.signature.signature
             );
         }

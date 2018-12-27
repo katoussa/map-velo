@@ -1,10 +1,12 @@
 var form = {
-    init: function(name, firstname, button, messError1, messError2, signature){
+    init: function(name, firstname, button, messError1, messError2, getName, getFirstname, signature){
         form.name = name;
         form.firstname = firstname;
         form.button = button;
         form.messError1 = messError1;
         form.messError2 = messError2;
+        form.getName = getName;
+        form.getFirstname = getFirstname;
 
         form.testInputs();
         form.btnActive();
@@ -55,6 +57,17 @@ var form = {
                 signature.className = "signature";
             }else{
                 console.log("form valid");
+                if(typeof sessionStorage!='undefined') {
+                    if('name' in sessionStorage) {
+                      alert("Message récupéré");
+                      localStorage.setItem("form.getName", form.name.value);
+                      localStorage.setItem("form.getFirstname", form.firstname.value);
+                    }
+                  } else {
+                    alert("sessionStorage n'est pas supporté");
+                  };
+                console.log(form.name.value);
+                console.log(form.firstname.value);
                 signature.className = "signatureVisible";
             };
         });
