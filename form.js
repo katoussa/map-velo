@@ -1,12 +1,12 @@
 var form = {
-    init: function(name, firstname, button, messError1, messError2, getName, getFirstname, signature){
+    init: function(name, firstname, button, messError1, messError2, setName, setFirstame, signature){
         form.name = name;
         form.firstname = firstname;
         form.button = button;
         form.messError1 = messError1;
         form.messError2 = messError2;
-        form.getName = getName;
-        form.getFirstname = getFirstname;
+        form.setName = setName;
+        form.setFirstame = setFirstame;
 
         form.testInputs();
         form.btnActive();
@@ -58,12 +58,10 @@ var form = {
             }else{
                 console.log("form valid");
                 if(typeof sessionStorage!='undefined') {
-                    if('name' in sessionStorage) {
-                      alert("Message récupéré");
-                      localStorage.setItem("form.getName", form.name.value);
-                      localStorage.setItem("form.getFirstname", form.firstname.value);
-                    }
-                  } else {
+                    alert("Message récupéré");
+                    localStorage.setItem("form.setName", form.name.value);
+                    localStorage.setItem("form.setFirstame", form.firstname.value);
+                  }else {
                     alert("sessionStorage n'est pas supporté");
                   };
                 console.log(form.name.value);

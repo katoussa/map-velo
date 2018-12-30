@@ -30,8 +30,8 @@ var globalMain = {
             button: document.getElementById("btnForm"),
             messError1: document.getElementById("messError1"),
             messError2: document.getElementById("messError2"),
-            getName: "",
-            getFirstname: ""
+            setName: "",
+            setFirstname: ""
         },
         signature: {
             signature: document.getElementById("signature")
@@ -81,8 +81,8 @@ var globalMain = {
                 globalMain.data.form.button,
                 globalMain.data.form.messError1,
                 globalMain.data.form.messError2,
-                globalMain.data.form.getName,
-                globalMain.data.form.getFirstname,
+                globalMain.data.form.setName,
+                globalMain.data.form.setFirstname,
                 globalMain.data.signature.signature
             );
         }
