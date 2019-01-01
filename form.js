@@ -8,12 +8,25 @@ var form = {
         form.setName = setName;
         form.setFirstame = setFirstame;
 
+        services.getStorageName();
+        services.getStorageFirstname();
         form.checkForm();
         form.btnActive();
         form.validForm(signature);
     },
 
     checkForm: function(){
+        if(form.name.value.length < 3){
+            messError1.className = "messError1v";
+        }else{
+            messError1.className = "messError1";
+        };
+        if(form.firstname.value.length < 3){
+            messError2.className = "messError2v";
+        }else{
+            messError2.className = "messError2";
+        };
+
         if(form.name.value.length < 3 || form.firstname.value.length < 3){
             form.button.disabled = true;
         }else if(form.name.value.length > 3 && form.firstname.value.length > 3){

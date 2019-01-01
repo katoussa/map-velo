@@ -14,10 +14,7 @@ var infos = {
         infos.stationAdress.innerHTML= "<span class='bolt'>Adresse: </span>" + stations.stations[i].address;
         infos.dispoBike.innerHTML= "<span class='bolt'>Nombre de vélos disponibles: </span>" + stations.stations[i].available_bikes;
         infos.dispoPlace.innerHTML= "<span class='bolt'>Nombre de places disponibles: </span>" + stations.stations[i].available_bike_stands;
-        
-        services.getStorageName();
-        services.getStorageFirstname();
-        
+                
         if(stations.stations[i].available_bikes > 0){ //si vélo dispos entrer nom + prénom
             document.getElementById(infos.formInvisible).className = "formVisible";
             document.getElementById(infos.noBikes).className = "noBikes";
