@@ -8,52 +8,22 @@ var form = {
         form.setName = setName;
         form.setFirstame = setFirstame;
 
-        form.testInputs();
         form.checkForm();
         form.btnActive();
         form.validForm(signature);
     },
 
-    testInputs: function(){
-        console.log("regExp ok! " + form.name.value.length);
-        form.regName = false;
-        form.regFirstname= false;
-
-        form.name.addEventListener("input", function() {
-            if( form.name.value.length < 3){
-                form.messError1.className = "messError1v";
-                form.regName = false;
-            }else{
-                form.regName = true;
-                form.messError1.className = "messError1";
-            };
-        });
-
-        form.firstname.addEventListener("input", function() {
-            if(form.firstname.value.length < 3){
-                form.regFirstname = false;
-                form.messError2.className = "messError2v";
-            }else{
-                form.regFirstname = true;
-                form.messError2.className = "messError2";
-            };
-        });
-    },
-
     checkForm: function(){
-        if(form.regName === false || form.regFirstname === false){
+        if(form.name.value.length < 3 || form.firstname.value.length < 3){
             form.button.disabled = true;
-        }else if(form.regName === true && form.regFirstname === true){
+        }else if(form.name.value.length > 3 && form.firstname.value.length > 3){
             form.button.disabled = false;
         };
     },
 
     btnActive: function(){
-        //document.getElementById("formInvisible").addEventListener("keyup", function(){
-            //form.checkForm();
-        //});
         form.name.addEventListener("input", form.checkForm.bind(form));
-    form.firstname.addEventListener("input", form.checkForm.bind(form));
+        form.firstname.addEventListener("input", form.checkForm.bind(form));
     },
 
     validForm: function(signature){
