@@ -1,4 +1,5 @@
 var services = {
+
     getData: function(url) {
         var thisData = new Promise(function(resolve, reject) {
             $.get(url, function(dataPromise) {
@@ -13,13 +14,14 @@ var services = {
     },
 
     getStorageName: function(){
-        currentName = localStorage.getItem(form.setName);
+        currentName = localStorage.getItem("form.setName");
         console.log("localStorage nom = " + currentName);
         form.name.value = currentName;
     },
 
+    
     getStorageFirstname: function(){
-        currentFirstname = localStorage.getItem(form.setFirstname);
+        currentFirstname = localStorage.getItem("form.setFirstname");
         console.log("localStorage prénom = " + currentFirstname);
         form.firstname.value = currentFirstname;
     }

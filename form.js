@@ -60,7 +60,7 @@ var form = {
                 if(typeof sessionStorage!='undefined') {
                     alert("Message récupéré");
                     localStorage.setItem("form.setName", form.name.value);
-                    localStorage.setItem("form.setFirstame", form.firstname.value);
+                    localStorage.setItem("form.setFirstname", form.firstname.value);
                   }else {
                     alert("sessionStorage n'est pas supporté");
                   };
