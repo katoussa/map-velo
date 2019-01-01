@@ -9,6 +9,7 @@ var form = {
         form.setFirstame = setFirstame;
 
         form.testInputs();
+        form.checkForm();
         form.btnActive();
         form.validForm(signature);
     },
@@ -39,14 +40,20 @@ var form = {
         });
     },
 
+    checkForm: function(){
+        if(form.regName === false || form.regFirstname === false){
+            form.button.disabled = true;
+        }else if(form.regName === true && form.regFirstname === true){
+            form.button.disabled = false;
+        };
+    },
+
     btnActive: function(){
-        document.getElementById("formInvisible").addEventListener("keyup", function(){
-            if(form.regName === false || form.regFirstname === false){
-                form.button.disabled = true;
-            }else if(form.regName === true && form.regFirstname === true){
-                form.button.disabled = false;
-            };
-        });
+        //document.getElementById("formInvisible").addEventListener("keyup", function(){
+            //form.checkForm();
+        //});
+        form.name.addEventListener("input", form.checkForm.bind(form));
+    form.firstname.addEventListener("input", form.checkForm.bind(form));
     },
 
     validForm: function(signature){
